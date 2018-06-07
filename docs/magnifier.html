@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>（图片）放大镜</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        .img-container {
+            width: 350px;
+            height: 400px;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        
+        .img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-container">
+        <img id="img" src="./images/t.jpg" />
+    </div>
+</body>
+<script src="./js/magnifier.js"></script>
+<script>
+    magnifier({
+        element: document.getElementById('img'), //HTMLElement,//图片节点（必选）
+        src: './images/t.jpg', //大图链接（必选）
+        // wrapper: null, //HTMLElement,//图片容器节点（可选）
+        //offset:10,//wrapper与放大区域的距离
+        //direction: 'right', //方向  有效值：left top right bottom   （可选）
+        //scanerWidth: 80, //扫描块宽度 单位：px （可选）
+        // scanerHeight: 80 //扫描块高度 单位：px （可选）
+    });
+</script>
+
+</html>
